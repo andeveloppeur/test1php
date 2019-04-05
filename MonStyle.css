@@ -1,0 +1,101 @@
+body{
+    background-color: rgb(115, 214, 120);
+    margin: 0px;
+}
+img{
+    border:2px solid rgb(51, 64, 139);
+    width:8%;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+#textPhenix{
+    font-size: 80px;
+    position: absolute;
+    left: 317px;
+    top: 0px;
+    margin: 9px;
+}
+.menu, .piedPage{
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+    background-color: blue;
+    height: 50px;
+}
+.menu ul{
+    margin: 0px;
+    height: 100%;
+}
+.menu li{
+    display: inline-block;
+    height: 46px;
+    padding-top: 5px;
+    border: 0.1px solid #af8c8c;
+    margin-left: -5px;
+}
+.menu li a{
+    
+    text-decoration: none;
+    color: black;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 35px;
+    position: relative;
+    top: 5px;
+}
+.menu li:hover{
+    background-color: rgba(167, 59, 59, 0.623);
+    border-top:5px solid red;
+    margin-top: -5px;
+    padding-top: 0px;
+}
+
+.left{
+    width: 215px;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 50px;
+}
+#Inscription{
+    border: 5px solid rgb(179, 142, 142);
+    padding: 5px;
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 388px;
+    margin-bottom: 100px;
+    background-color: #967979d1;
+}
+#naiss, #pays{
+    width: 168px;
+}
+#BEnvoie{
+    margin-left: 436px;
+}
+.piedPage{
+    font-size: 20px;
+    padding-top: 1px;
+}
+#perso{
+    height: 500px;
+}
+#verPage3{
+    width: 200px;
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+#divConnexion{
+    border: 5px solid rebeccapurple;
+    width: 30%;
+    margin-left: 472px;
+    margin-top: 100px;
+}
+#BConnexion{
+    margin-left: 204px;
+}
+.Cleft{
+    width: 150px;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 50px;
+}
