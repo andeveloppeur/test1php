@@ -28,10 +28,12 @@
                 $requete->execute();
                 $resultat=$requete->fetchAll();
                 if($MDP==$resultat["0"]["MDP"]){
-                    echo "même mot de passe";
+                    //echo "même mot de passe";
+                    header('Location: http://localhost/Moi/MaPage3.php');
                 }
                 else{
-                    echo "Erreur sur le login ou le mot de passe";
+                    header('Location: http://localhost/Moi/MaPage2.php');
+                    //echo "Erreur sur le login ou le mot de passe";
                 }
                 /*echo "<pre>";
                     print_r($resultat);
@@ -43,7 +45,7 @@
         ?>
 
         <?php
-            //include("piedDePage.php");
+            include("piedDePage.php");
         ?>
     </body>
 </html>

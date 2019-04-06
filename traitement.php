@@ -6,10 +6,6 @@
         <title>Ma page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="MonStyle.css">
-    <style>
-    
-    </style>
-    
     </head>
     <body>
         <?php
@@ -86,11 +82,17 @@
                 }
             ?>
 
-            <a href="http://localhost/Moi/MaPage2.php"><button id="verPage3">Connexion</button></a>
+            <h1>Inscription réalisée avec succés, vous allez être rediriger dans quelques instant...</h1>
         </div>
         <?php
            include("piedDePage.php");
         ?>
+        <script>
+            function rediriger(){
+                document.location.href="http://localhost/Moi/MaPage2.php"; 
+            }
+            setTimeout(rediriger,5000);
+        </script>
     
     </body> 
 </html>
