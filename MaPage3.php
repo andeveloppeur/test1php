@@ -1,3 +1,13 @@
+<?php
+empty($_SESSION)? session_start():print""; 
+//session_start();
+if ($_SESSION['session_user_name']==NULL)//vérification variable de session
+{ 
+    echo "Entrée interdite";
+    exit(); 
+} 
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,13 +23,19 @@
         ?>
         <div id="perso">
             <div>
-                <form>
-                    
-                </form>
+                <?php
+                
+                ?>
             </div>
         </div>
         <?php
             include("piedDePage.php");
         ?>
+    <script>
+        
+        //alert("ok");
+        //alert(nom);
+    </script>
     </body>
+
 </html>

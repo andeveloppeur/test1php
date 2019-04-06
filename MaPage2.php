@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,6 +28,13 @@
                         <input type="password" name="seConnecter" id="seConnecter">
                     </p>
                     <input type="submit" value="CONNEXION" id="BConnexion">
+                    <label id="err" value="un erreur">
+                    <?php
+                        if($_SESSION["Incorrect"]==true){
+                            echo"<p id='LogMDPERR'>Erreur : Login ou Mot de passe erroné</p>";
+                        }
+                        
+                    ?>
                 </form>
             </div>
         </div>

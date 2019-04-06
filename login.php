@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,16 +32,14 @@
                 $requete->execute();
                 $resultat=$requete->fetchAll();
                 if($MDP==$resultat["0"]["MDP"]){
-                    //echo "même mot de passe";
-                    header('Location: http://localhost/Moi/MaPage3.php');
+                    $_SESSION['session_user_name'] = $_POST["pseudo"];
+                    header("Location: http://localhost/Moi/MaPage3.php?user_name=".$_SESSION['session_user_name']);//redirection
+                    $_SESSION["Incorrect"]=false;
                 }
                 else{
-                    header('Location: http://localhost/Moi/MaPage2.php');
-                    //echo "Erreur sur le login ou le mot de passe";
+                    $_SESSION["Incorrect"]=true;
+                    header('Location: http://localhost/Moi/MaPage2.php');   
                 }
-                /*echo "<pre>";
-                    print_r($resultat);
-                echo "</pre>";*/
             }
             catch(PDOException $e){
                 echo "ECHEC : ".$e->getMessage();
