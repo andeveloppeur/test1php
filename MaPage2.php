@@ -7,6 +7,7 @@ session_start(); //pour pouvoir utiliser les variables $_SESSION
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="Description" content="se connecter">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ma page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +22,12 @@ session_start(); //pour pouvoir utiliser les variables $_SESSION
                 <li><a href="MaPage2.php"> Login</a></li>
             </ul>
         </div>
+        <?php
+            if ($_SESSION['ouvert']==true){
+                session_destroy();/*lorsque la session est ouvert 
+                et qu on se deconnecte on revient sur cette page et la session est detruite*/
+            }
+        ?>
         <div id="perso">
             <div id="divConnexion">
                 <form method="POST" action="login.php">
@@ -64,10 +71,6 @@ session_start(); //pour pouvoir utiliser les variables $_SESSION
 
         <?php
             include("piedDePage.php");
-            if ($_SESSION['ouvert']==true){
-                session_destroy();/*lorsque la session est ouvert 
-                et qu on se deconnecte on revient sur cette page et la session est detruite*/
-            }
         ?>
         <script>
             var sonPseudo=document.getElementById("pseudo");

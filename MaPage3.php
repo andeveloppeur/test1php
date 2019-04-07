@@ -12,6 +12,7 @@ $_SESSION['ouvert']=true; //comme ca si la session est ouvert et qu on se trouve
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="Description" content="pqge utilisateur">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ma page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
