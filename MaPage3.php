@@ -1,11 +1,11 @@
 <?php
 empty($_SESSION)? session_start():print""; 
-//session_start();
+
 if ($_SESSION['session_user_name']==NULL)//vérification variable de session
 { 
     echo "Entrée interdite";
     exit(); 
-} 
+}
 
 ?>
 <!DOCTYPE html>
@@ -23,19 +23,21 @@ if ($_SESSION['session_user_name']==NULL)//vérification variable de session
         ?>
         <div id="perso">
             <div>
-                <?php
+                <h1>Bonjour <?php 
+                if($_SESSION["sexe"]=="homme"){
+                    echo "monsieur";
+                }
+                else{
+                    echo "madame";
+                }
+                echo ' '.$_SESSION["nom"].' '.$_SESSION["prenom"];
                 
-                ?>
+                ?>, bienvenue sur votre page personnel</h1>
             </div>
         </div>
         <?php
             include("piedDePage.php");
         ?>
-    <script>
-        
-        //alert("ok");
-        //alert(nom);
-    </script>
     </body>
 
 </html>
