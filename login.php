@@ -21,7 +21,8 @@ session_start();
             $Monpass="101419";
 
             $login=$_POST["pseudo"];
-            $MDP=$_POST["seConnecter"];
+            $_SESSION['MDP']=$_POST["seConnecter"];
+            $_SESSION['login'] = $_POST["pseudo"];
 
             try {
                 $connexion=new PDO("mysql:host=$serveur;dbname=testperso;charset=utf8",$Monlogin,$Monpass);
@@ -35,8 +36,8 @@ session_start();
                     print_r($resultat);
                 echo"<pre>";*/
 
-                if($MDP==$resultat["0"]["MDP"]){
-                    $_SESSION['login'] = $_POST["pseudo"];
+                if($_SESSION['MDP']==$resultat["0"]["MDP"]){
+                    
                     $_SESSION['nom'] = $resultat["0"]["nom"];
                     $_SESSION['prenom'] = $resultat["0"]["prenom"];
                     $_SESSION['sexe'] = $resultat["0"]["sexe"];

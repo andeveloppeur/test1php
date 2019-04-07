@@ -21,11 +21,27 @@ session_start();
                 <form method="POST" action="login.php">
                     <p>
                         <label for="pseudo" class="Cleft">Login</label>
-                        <input type="text" id="pseudo" name="pseudo">
+                        <input type="text" id="pseudo" name="pseudo" 
+                        value="<?php 
+                        if ($_SESSION['login']==NULL){
+                            echo"";
+                        }
+                        elseif ($_SESSION['login']!=NULL){
+                            echo $_SESSION['login'];
+                        }
+                        ?>">
                     </p>
                     <p>
                         <label for="seConnecter" class="Cleft">Mot de passe</label>
-                        <input type="password" name="seConnecter" id="seConnecter">
+                        <input type="password" name="seConnecter" id="seConnecter"                        
+                        value="<?php 
+                        if ($_SESSION['MDP']==NULL){
+                            echo"";
+                        }
+                        elseif ($_SESSION['MDP']!=NULL){
+                            echo $_SESSION['MDP'];
+                        }
+                        ?>">
                     </p>
                     <input type="submit" value="CONNEXION" id="BConnexion">
                     <label id="err" value="un erreur">
@@ -41,6 +57,10 @@ session_start();
 
         <?php
             include("piedDePage.php");
+            if ($_SESSION['ouvert']==true){
+                session_destroy();
+            }
         ?>
+
     </body>
 </html>

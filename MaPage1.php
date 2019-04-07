@@ -41,7 +41,7 @@
                     <select name="pays">
                         <optgroup label="Afrique">
                             <option value="Mali">Mali</option>
-                            <option value="senegal">Sénégal</option>
+                            <option value="Sénégal">Sénégal</option>
                             <option value="CI">Cote d'ivoire</option>
                             <option value="GN">Ghana</option>
                             <option value="GB">Guinée Bisseau</option>
