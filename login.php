@@ -1,21 +1,5 @@
 <?php
 session_start();
-?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ma page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="MonStyle.css">
-    </head>
-    <body>
-        <?php
-            include("menu.php");
-        ?>
-        <?php
             $serveur="localhost";
             $Monlogin="root";
             $Monpass="101419";
@@ -57,9 +41,3 @@ session_start();
                 echo "ECHEC : ".$e->getMessage();
             }
         ?>
-
-        <?php
-            include("piedDePage.php");
-        ?>
-    </body>
-</html>

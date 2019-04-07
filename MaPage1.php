@@ -8,9 +8,14 @@
         <link rel="stylesheet" type="text/css" media="screen" href="MonStyle.css">
     </head>
     <body>
-        <?php
-            include("menu.php");
-        ?>
+        <img src="logoo.pnj" alt="logo pic">
+        <p id="textPhenix">SONATEL ACADEMY</p>
+        <div class="menu">
+            <ul>
+                <li><a href="MaPage1.php">Inscription</a></li>
+                <li><a href="MaPage2.php"> Login</a></li>
+            </ul>
+        </div>
         <div id="Inscription">
             <form method="POST" action="traitement.php">
                 <p>

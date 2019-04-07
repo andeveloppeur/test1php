@@ -8,10 +8,16 @@
         <link rel="stylesheet" type="text/css" media="screen" href="MonStyle.css">
     </head>
     <body>
-        <?php
-            include("menu.php");
-        ?>
-        
+        <img src="logoo.pnj" alt="logo pic">
+        <p id="textPhenix">SONATEL ACADEMY</p>
+        <div id="perso">
+            <div class="menu">
+                <ul>
+                    <li><a href="MaPage3.php"> Page perso</a></li>
+                    <li><a href="MaPage4.php"> Contact</a></li>
+                </ul>
+            </div>
+        </div>
 
         <?php
             include("piedDePage.php");

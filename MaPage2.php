@@ -13,9 +13,14 @@ session_start();
         <link rel="stylesheet" type="text/css" media="screen" href="MonStyle.css">
     </head>
     <body>
-        <?php
-            include("menu.php");
-        ?>
+        <img src="logoo.pnj" alt="logo pic">
+        <p id="textPhenix">SONATEL ACADEMY</p>
+        <div class="menu">
+            <ul>
+                <li><a href="MaPage1.php">Inscription</a></li>
+                <li><a href="MaPage2.php"> Login</a></li>
+            </ul>
+        </div>
         <div id="perso">
             <div id="divConnexion">
                 <form method="POST" action="login.php">
@@ -58,7 +63,8 @@ session_start();
         <?php
             include("piedDePage.php");
             if ($_SESSION['ouvert']==true){
-                session_destroy();
+                session_destroy();/*lorsque la session est ouvert 
+                et qu on se deconnecte on revient sur cette page et la session est detruite*/
             }
         ?>
 

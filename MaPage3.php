@@ -18,11 +18,16 @@ $_SESSION['ouvert']=true; //comme ca si la session est ouvert et qu on se trouve
         <link rel="stylesheet" type="text/css" media="screen" href="MonStyle.css">
     </head>
     <body>
-        <?php
-            include("menu.php");
-        ?>
+        <img src="logoo.pnj" alt="logo pic">
+        <p id="textPhenix">SONATEL ACADEMY</p>
+        <div class="menu">
+            <ul>
+                <li><a href="MaPage3.php"> Page perso</a></li>
+                <li><a href="MaPage4.php"> Contact</a></li>
+            </ul>
+        </div>
+
         <div id="perso">
-            
             <h1>Bonjour <?php 
             if($_SESSION["sexe"]=="homme"){
                 echo "monsieur";
@@ -49,15 +54,6 @@ $_SESSION['ouvert']=true; //comme ca si la session est ouvert et qu on se trouve
         <?php
             include("piedDePage.php");
         ?>
-        <script>
-            var BDeco=document.getElementById("BDeco");
-            BDeco.addEventListener("click", SeDeconnecter);     
-            function SeDeconnecter(){
-                //detuire ma section
-                //section_destroy();
-            }
-        </script>
-
     </body>
 
 </html>
