@@ -24,31 +24,9 @@ var ConfMDP=document.getElementById("ConfMDP");
 var MDPerr=document.querySelector(".verMDP");
 var Envoie=document.getElementById("BEnvoie");
 
-//var homme=document.getElementById("homme");
-//var SexVide=document.getElementById("verSexe");
 Envoie.addEventListener("click",verification);
 
-
-//teste
-/*var vtf=document.getElementById("vtf");
-vtf.addEventListener("click",tvtf);
-function tvtf(){
-    var reg1=/^[a-zA-ZéèëêîïÉÈÏËÊ][a-zéèëçêîï]+([-'\s][a-zA-ZéèëêîïÉÈÏËÊ][a-zéèëçêîï])?/;
-    var reg2=/a/;
-    var reg3=/[\{]/;
-    alert(reg3.test(login.value));
-    alert("ok");
-    
-    if(reg3.test(login.value)==true){
-    
-        //e.preventDefault();
-        alert("erreur sur le nom");
-    }
-}*/
-//fin test
-
-
-function verification(e){
+function verification(e){//verification des deux mots de passe lors de l inscription
     if(MDP.value!=ConfMDP.value){
         MDPerr.textContent="MOT DE PASSE DIFFERENT";
         MDPerr.style.color="red";
@@ -57,14 +35,14 @@ function verification(e){
         MDPerr.style.marginTop="10px";
         e.preventDefault();
     }
-    nomEr.textContent=""; //pour lorsqu on modifie et on appuie de nouveau sur envoyer
+    nomEr.textContent=""; //pour lorsqu on modifie et qu'on appuie de nouveau sur envoyer
     prenomEr.textContent="";
     emailEr.textContent="";
     loginEr.textContent="";
     MDPEr.textContent="";
 
     var reg1=/[<>\/*\+\|\.=@\{\},\[\[\?!\$]/;
-    if(reg1.test(nom.value)==true){
+    if(reg1.test(nom.value)==true){//pour ne pas voir dans le champ nom tous les éléments present sur le regex
         e.preventDefault();
         nomEr.textContent="Erreur";
         nomEr.style.color="red";

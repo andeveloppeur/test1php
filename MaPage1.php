@@ -21,7 +21,7 @@
                 <p>
                     <label for="nom" class="left">NOM</label>
                     <input type="text" name="nom" id="nom" required="required">
-                    <span id="nomEr"></span> <!--pour en cas d erreur -->
+                    <span id="nomEr"></span> <!--pour en cas d erreur sur le nom-->
                 </p>   
                 <p>
                     <label for="prenom" class="left">PRENOM</label>
@@ -94,7 +94,6 @@
                 </p>
                 <input type="submit" id="BEnvoie" value="ENREGISTER">
             </form>
-            <!-- <button id="vtf">vtf</button> -->
         </div>
 
         <?php

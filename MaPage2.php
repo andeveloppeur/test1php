@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //pour pouvoir utiliser les variables $_SESSION
 ?>
 
 
@@ -27,7 +27,9 @@ session_start();
                     <p>
                         <label for="pseudo" class="Cleft">Login</label>
                         <input type="text" id="pseudo" name="pseudo" 
-                        value="<?php 
+                        value="<?php //ce code php permet de mettre le login sur "" lors du chargement de la page 
+                        //et si il y a une erreur sur le mot de passe ou le login d afficher 
+                        //la valeur le login qu on avait mis precédement
                         if ($_SESSION['login']==NULL){
                             echo"";
                         }
@@ -35,11 +37,12 @@ session_start();
                             echo $_SESSION['login'];
                         }
                         ?>">
+                        <span id="Erlog"></span>
                     </p>
                     <p>
                         <label for="seConnecter" class="Cleft">Mot de passe</label>
                         <input type="password" name="seConnecter" id="seConnecter"                        
-                        value="<?php 
+                        value="<?php //même chose pour le mot de passe
                         if ($_SESSION['MDP']==NULL){
                             echo"";
                         }
@@ -47,14 +50,13 @@ session_start();
                             echo $_SESSION['MDP'];
                         }
                         ?>">
+                        <span id="ErMotDpass"></span>
                     </p>
                     <input type="submit" value="CONNEXION" id="BConnexion">
-                    <label id="err" value="un erreur">
                     <?php
                         if($_SESSION["Incorrect"]==true){
                             echo"<p id='LogMDPERR'>Erreur : Login ou Mot de passe erroné</p>";
-                        }
-                        
+                        }//pour en cas d erreur sur le login ou le MDP (elle est definie sur login.php)
                     ?>
                 </form>
             </div>
@@ -67,6 +69,28 @@ session_start();
                 et qu on se deconnecte on revient sur cette page et la session est detruite*/
             }
         ?>
+        <script>
+            var sonPseudo=document.getElementById("pseudo");
+            var ErsonPseudo=document.getElementById("Erlog");
+            var SonMDP=document.getElementById("seConnecter");
+            var ErSonMDP=document.getElementById("ErMotDpass");
+            var Connex=document.getElementById("BConnexion");
 
+            Connex.addEventListener("click",verif);
+            function verif(e){
+                var reg3=/[\s<>\/*\+\|\.=@\{\},\[\[\?!\$]/;
+                if(reg3.test(sonPseudo.value)==true){
+                    e.preventDefault();
+                    ErsonPseudo.textContent="Erreur";
+                    ErsonPseudo.style.color="red";
+                }
+                var reg4=/[<>]/;
+                if(reg4.test(SonMDP.value)==true){
+                    e.preventDefault();
+                    ErSonMDP.textContent="Erreur";
+                    ErSonMDP.style.color="red";
+                }
+            }
+        </script>
     </body>
 </html>

@@ -22,7 +22,7 @@
                 $Monlogin="root";
                 $Monpass="101419";
 
-                $nom=$_POST["nom"];
+                $nom=$_POST["nom"];//nom recuperer sur le formulaire d inscription
                 $prenom=$_POST["prenom"];
                 $sexe=$_POST["sexe"];
                 $naiss=$_POST["naiss"];
@@ -45,12 +45,12 @@
                 }
 
                 function securisation($donnees){
-                    $donnees=trim($donnees);
-                    $donnees=stripslashes($donnees);
-                    $donnees=strip_tags($donnees); //neutralise le code html
+                    $donnees=trim($donnees);//trim supprime les espaces (ou d'autres caractères) en début et fin de chaîne
+                    $donnees=stripslashes($donnees); //Supprime les antislashs d'une chaîne
+                    $donnees=strip_tags($donnees); //neutralise le code html et php
                     return $donnees;
                 }
-                $nom=securisation($nom);
+                $nom=securisation($nom);//securisation du nom
                 $prenom=securisation($prenom);
                 $sexe=securisation($sexe);
                 $naiss=securisation($naiss);
@@ -62,13 +62,13 @@
                 
 
                 try {
-                    $connexion=new PDO("mysql:host=$serveur;dbname=testperso;charset=utf8",$Monlogin,$Monpass);
-                    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $connexion=new PDO("mysql:host=$serveur;dbname=testperso;charset=utf8",$Monlogin,$Monpass);//se connecte au serveur mysquel
+                    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//setAttribute — Configure l'attribut PDO $connexion
                     $codemysql="INSERT INTO Utilisateurs (nom,prenom,sexe,naissance,pays,email,login,MDP,loisir)
-                    VALUES(:nom,:prenom,:sexe,:naissance,:pays,:email,:login,:MDP,:loisir)";
+                    VALUES(:nom,:prenom,:sexe,:naissance,:pays,:email,:login,:MDP,:loisir)";//le code mysql
                         
-                    $requete=$connexion->prepare($codemysql);
-                    $requete->bindParam(":nom",$nom);
+                    $requete=$connexion->prepare($codemysql);//Prépare la requête $codemysql à l'exécution 
+                    $requete->bindParam(":nom",$nom);//bindParam lie un paramètre (:nom) à un nom de variable spécifique ($nom)
                     $requete->bindParam(":prenom",$prenom);
                     $requete->bindParam(":sexe",$sexe);
                     $requete->bindParam(":naissance",$naiss);
@@ -78,12 +78,12 @@
                     $requete->bindParam(":MDP",$MDP);
                     $requete->bindParam(":loisir",$loisir);
                     
-                    $requete->execute();
+                    $requete->execute();//excecute la requete qui a été preparé
                     
                 } 
                 catch (PDOException $e) {
-                    echo "ECHEC : ".$e->getMessage();
-                    
+                    echo "ECHEC : ".$e->getMessage();//en cas d erreur lors de la connexion à la base de données mysql
+                    exit();//arreter le code
                 }
             ?>
 
@@ -96,7 +96,7 @@
             function rediriger(){
                 document.location.href="http://localhost/Moi/MaPage2.php"; 
             }
-            setTimeout(rediriger,5000);
+            setTimeout(rediriger,5000);//pour etre rediriger apres 5 secondes à la page de login
         </script>
     
     </body> 

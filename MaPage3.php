@@ -1,10 +1,10 @@
 <?php
 empty($_SESSION)? session_start():print""; 
 
-if ($_SESSION['nom']==NULL)//vérification variable de session
+if ($_SESSION['nom']==NULL)//si la variable session est NULL se la voudra dire que la personne ne c est pas connectée
 { 
     echo "Entrée interdite";
-    exit(); 
+    exit(); //bloquer le code et ne pas afficher le reste
 }
 $_SESSION['ouvert']=true; //comme ca si la session est ouvert et qu on se trouve sur le login elle sera detruite
 ?>
@@ -41,7 +41,7 @@ $_SESSION['ouvert']=true; //comme ca si la session est ouvert et qu on se trouve
             <p id="pinf">
                 <span id='VosInf'>Vos informations personnelles :</span> <br><br>
                 <?php
-                    echo"<span id='Inf'>Nom</span>: ".$_SESSION["nom"].'<br>';
+                    echo"<span id='Inf'>Nom</span>: ".$_SESSION["nom"].'<br>';//les span sont utilisés pour les aligner
                     echo"<span id='Inf'>Prenom</span>: ".$_SESSION["prenom"].'<br>';
                     echo"<span id='Inf'>Date de naissance</span>: ".$_SESSION["naissance"].'<br>';
                     echo"<span id='Inf'>Pays d'origine</span>: ".$_SESSION["pays"].'<br>';
@@ -49,7 +49,7 @@ $_SESSION['ouvert']=true; //comme ca si la session est ouvert et qu on se trouve
                     echo"<span id='Inf'>Loisir</span>: ".$_SESSION["loisir"].'<br>';
                 ?>
             </p>
-            <a href="http://localhost/Moi/MaPage2.php"><button id="BDeco">Déconnexion</button></a>
+            <a href="http://localhost/Moi/MaPage2.php"><button id="BDeco">Déconnexion</button></a><!--lien qui renvoi sur la page login-->
         </div>
         <?php
             include("piedDePage.php");
